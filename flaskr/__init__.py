@@ -4,6 +4,7 @@ from flask import Flask
 from dotenv import load_dotenv
 from flask_sqlalchemy import SQLAlchemy
 
+
 db = SQLAlchemy()
 
 
@@ -25,8 +26,10 @@ def create_app(test_config=None):
         db.init_app(app)
 
     with app.app_context():
-        from flaskr.races import races_bp
-        app.register_blueprint(races_bp, url_prefix='/races')
+        # Initializing race module
+        from flaskr.races import RacesViews
+        RacesViews(app)
+
         if test_config is None:
             db.create_all()
 
