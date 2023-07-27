@@ -1,0 +1,9 @@
+.coverage
+*.coverage
+.pytest_cache
+*.pytest_cache
+
+#pycache folders
+**/__pycache__/
+venv
+docker_data
