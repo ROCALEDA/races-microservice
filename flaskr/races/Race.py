@@ -3,11 +3,11 @@ from flaskr import db
 
 
 class Race(db.Model):
-    __tablename__ = "race"
+    __tablename__ = "carrera"
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    name = db.Column(db.String)
-    isFinished = db.Column(db.Boolean)
+    nombre = db.Column(db.String)
+    estaTerminada = db.Column(db.Boolean)
 
 
 class RaceSchema(SQLAlchemyAutoSchema):
