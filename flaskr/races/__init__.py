@@ -15,7 +15,7 @@ class RacesViews:
 
     @staticmethod
     @races_bp.get("/ping")
-    def ping() -> None:
+    def ping() -> str:
         return "pong"
 
     @staticmethod
@@ -28,7 +28,7 @@ class RacesViews:
     @races_bp.get("/<id>")
     def get_race_by_id(id: int):
         race = races_repository.get_by_id(id)
-        
+
         if race is not None:
             return {"id": race.id, "nombre": race.nombre, "estaTerminada": race.estaTerminada}, 200
 
