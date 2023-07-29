@@ -29,6 +29,6 @@ class RacesViews:
     def get_race_by_id(id: int):
         race = races_repository.get_by_id(id)
         if race is not None:
-            return {"id": race.id, "name": race.name, "isFinished": race.isFinished}, 200
+            return {"id": race.id, "nombre": race.nombre, "estaTerminada": race.estaTerminada}, 200
 
         return "Race not found", 404
