@@ -8,4 +8,4 @@ class RaceRepository(IRaceRepository):
         return Race.query.filter_by(id=id).first()
 
     def get_all(self):
-        return Race.query.order_by(asc(Race.name)).all()
+        return Race.query.order_by(asc(Race.nombre)).all()
